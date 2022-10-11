@@ -79,7 +79,8 @@ module RRD
       rra_count.times do |rra_index|
         options[:rra][rra_index].current_row = reader.read(8, "Q").first
       end
-
+      
+      options[:step] = @step
       Header.new(options)
     end    
 
