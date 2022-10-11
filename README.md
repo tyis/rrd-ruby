@@ -29,10 +29,10 @@ require 'rrd'
 file = RRD::File.new("path/to/my_awesome.rrd")
 
 # Get all Round Robin Archive infos
-rra = file.rra
+rra = file.header.rra
 
 # Get all DataSource infos
-ds = file.datasources
+ds = file.header.datasources
 
 # Get all data from RRA in specified time interval
 data = file.data(0).fetch(start_time: 20.minutes.ago, end_time: 5.minutes.ago)
